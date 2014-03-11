@@ -8,11 +8,18 @@
     template: JST['post_show'],
 
     events: {
-      'click .back-link': 'toIndex',
       'dblclick #post-title': 'editPostTitle',
       'dblclick #post-body': 'editPostBody',
       'blur .edit-title': 'changeTitle',
-      'blur .edit-body': 'changeBody'
+      'blur .edit-body': 'changeBody',
+      'keyup .edit-title': 'endEdit'
+    },
+
+    endEdit: function(event) {
+      var keyCode = event.keyCode;
+      if(keyCode === 13) {
+        this.changeTitle(event);
+      }
     },
 
     render: function() {
@@ -21,13 +28,9 @@
       return this;
     },
 
-    toIndex: function(event) {
-      JournalApp.router.navigate("",{trigger: true})
-    },
-
     editPostTitle: function(event) {
       var $title = $(event.target);
-      var $input = $("<input type=text class=\"edit-title\">");
+      var $input = $("<input type=text class=\"edit-title form-control\">");
       $input.val($title.text());
       $title.replaceWith($input);
     },
@@ -40,7 +43,7 @@
 
     editPostBody: function(event) {
       var $body = $(event.target);
-      var $textarea = $("<textarea class=\"edit-body\">");
+      var $textarea = $("<textarea class=\"edit-body form-control\">");
       $textarea.val($body.text().trim());
       $body.replaceWith($textarea);
     },

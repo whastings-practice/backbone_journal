@@ -1,15 +1,17 @@
 <h2>Add a Post</h2>
 
 <form>
-  <label>Title
-  <input type="text"
-         name="post[title]">
-  </label>
-  <label>Body
-    <textarea
-           name="post[body]">
-    </textarea>
-  </label>
+  <div class="form-group">
+    <label for="post_title">Title</label>
+    <input type="text"
+           name="post[title]" class="form-control" id="post_title">
+  </div>
 
-  <p><input type="submit" value="Add Post"></p>
+  <div class="form-group">
+    <label for="post_body">Body</label>
+    <textarea name="post[body]" class="form-control"
+      id="post_body" rows="3"></textarea>
+  </div>
+
+  <p><input type="submit" value="Add Post" class="btn btn-warning"></p>
 </form>

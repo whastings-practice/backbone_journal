@@ -1,14 +1,15 @@
-<ul>
+<ul class="list-group">
 <% posts.forEach(function(post) { %>
-  <li>
+  <li class="list-group-item">
     <a href="#" class="show-link" data-id="<%= post.get('id') %>">
       <%= post.get('title') %>
     </a>
-    <button class="delete-button" data-id="<%= post.get('id') %>">
+    <button class="delete-button btn btn-danger btn-xs pull-right" data-id="<%= post.get('id') %>">
       Delete
     </button>
   </li>
 <% });  %>
+  <li class="list-group-item">
+    <a href="#" class="new-post-link btn btn-success">New Post</a>
+  </li>
 </ul>
-
-<a href="#" class="new-post-link">New Post</a>

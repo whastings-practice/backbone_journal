@@ -10,7 +10,9 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap
  */
+
 
 * {
   box-sizing: border-box;
@@ -21,15 +23,14 @@ h1 {
 }
 
 #sidebar {
-  width: 30%;
-  float: left;
-
 }
 
 #content {
-  width: 70%;
-  float: left;
   background-color: #eee;
   border-radius: 5px;
   padding: 20px;
+}
+
+#content h2 {
+  margin-top: 0;
 }
