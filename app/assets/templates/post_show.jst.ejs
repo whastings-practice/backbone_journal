@@ -1,5 +1,7 @@
-<h2><%= post.get('title') %></h2>
+<h2 id="post-title"><%= post.get('title') %></h2>
 
-<%= post.get('body') %>
+<div id="post-body">
+  <%= post.get('body') %>
+</div>
 
 <a href="#" class="back-link">Back to Index</a>
