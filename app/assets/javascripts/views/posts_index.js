@@ -11,7 +11,8 @@
 
     events: {
       'click .delete-button': 'deletePost',
-      'click .show-link': 'showLink'
+      'click .show-link': 'showLink',
+      'click .new-post-link': 'newPostForm'
     },
 
     render: function() {
@@ -33,6 +34,11 @@
       var postId = $link.data('id');
       var url = '/posts/' + postId;
       JournalApp.router.navigate(url, {trigger: true});
+    },
+
+    newPostForm: function(event) {
+      event.preventDefault();
+      Backbone.history.navigate('posts/new', {trigger: true});
     }
   })
 
