@@ -4,10 +4,17 @@ window.JournalApp = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    var collection = new JournalApp.Collections.Posts();
+    var view = new JournalApp.Views.PostsIndex({collection: collection});
+    collection.fetch({
+      success: function() {
+        $('#content').html(view.render().$el);
+      }
+    });
   }
 };
 
 $(document).ready(function(){
   JournalApp.initialize();
 });
+
