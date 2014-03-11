@@ -22,12 +22,14 @@
       var callback = {
         success: function() {
           Backbone.history.navigate('', {trigger: true});
+          $theForm[0].reset();
         }
       };
       if (this.post.isNew()) {
         this.collection.create(formData.post, callback);
       } else {
         this.post.save(formData.post, callback);
+
       }
     }
 

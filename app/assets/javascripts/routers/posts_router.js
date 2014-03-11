@@ -9,23 +9,12 @@
 
     new: function() {
       var post = new JournalApp.Models.Post();
-      var view = new JournalApp.Views.PostForm({post: post, collection: this.collection});
+      var view = new JournalApp.Views.PostForm({post: post, collection: JournalApp.collection});
       this.element.html(view.render().$el);
     },
 
     initialize: function(element) {
       this.element = element
-    },
-
-    index: function() {
-      var that = this;
-      this.collection = new JournalApp.Collections.Posts();
-      var view = new JournalApp.Views.PostsIndex({collection: this.collection});
-      this.collection.fetch({
-        success: function() {
-          that.element.html(view.render().$el);
-        }
-      });
     },
 
     show: function(id) {

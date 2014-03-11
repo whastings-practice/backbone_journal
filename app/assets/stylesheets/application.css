@@ -11,3 +11,25 @@
  *= require_self
  *= require_tree .
  */
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+#sidebar {
+  width: 30%;
+  float: left;
+
+}
+
+#content {
+  width: 70%;
+  float: left;
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 20px;
+}
