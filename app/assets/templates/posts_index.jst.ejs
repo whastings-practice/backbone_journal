@@ -1,7 +1,9 @@
 <ul>
 <% posts.forEach(function(post) { %>
   <li>
-    <%= post.get('title') %>
+    <a href="#" class="show-link" data-id="<%= post.get('id') %>">
+      <%= post.get('title') %>
+    </a>
     <button class="delete-button" data-id="<%= post.get('id') %>">
       Delete
     </button>

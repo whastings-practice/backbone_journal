@@ -10,7 +10,8 @@
     template: JST["posts_index"],
 
     events: {
-      'click .delete-button': 'deletePost'
+      'click .delete-button': 'deletePost',
+      'click .show-link': 'showLink'
     },
 
     render: function() {
@@ -24,6 +25,14 @@
       var postId = $button.data("id");
       var thePost = this.collection.get(postId)
       thePost.destroy();
+    },
+
+    showLink: function(event) {
+      event.preventDefault();
+      var $link = $(event.target);
+      var postId = $link.data('id');
+      var url = '/posts/' + postId;
+      JournalApp.router.navigate(url, {trigger: true});
     }
   })
 
